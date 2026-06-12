@@ -303,7 +303,7 @@ with right_col:
     light=st.number_input(label="Set Ideal Light",value=iLight)
     sound=st.number_input(label="Set Ideal Sound",value=iSound)
 
-    gc = gspread.service_account(filename="credentials.json")
+    gc = gspread.service_account_from_dict(st.secrets["gcp_service_account"])
 
     sheet = gc.open_by_key("1vQbudVJ-6Ojjn5JJG2NjAlxePPR_GOBJ6JkoSJO_Ogk")
 
